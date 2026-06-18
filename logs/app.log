@@ -1,0 +1,276 @@
+2026-06-18 14:57:53.067 [main] INFO  by.grechanikovars.texthandler.reader.impl.FileTextReader - File read successfully: data/text.txt, chars=719
+2026-06-18 14:57:53.073 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 14:57:53.073 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 14:57:53.073 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 14:57:53.074 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 3 paragraph(s)
+2026-06-18 14:57:53.075 [main] INFO  by.grechanikovars.texthandler.service.impl.TextRestoringServiceImpl - Text restored, length=714
+2026-06-18 14:57:53.078 [main] INFO  by.grechanikovars.texthandler.Main - === Restored text ===
+It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+
+It is a established fact that a reader will be of a page when looking at its layout. Bye.
+2026-06-18 14:57:53.079 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Letter count: 578
+2026-06-18 14:57:53.079 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Non-whitespace symbol count: 594
+2026-06-18 14:57:53.079 [main] INFO  by.grechanikovars.texthandler.Main - Letters: 578   Non-whitespace symbols: 594
+2026-06-18 14:57:53.080 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceWordServiceImpl - Most common word across sentences: 'it' — appears in 5 sentence(s)
+2026-06-18 14:57:53.080 [main] INFO  by.grechanikovars.texthandler.Main - === Task 1: 5 sentence(s) share the most common word ===
+2026-06-18 14:57:53.080 [main] INFO  by.grechanikovars.texthandler.Main -   It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+2026-06-18 14:57:53.080 [main] INFO  by.grechanikovars.texthandler.Main -   It was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+2026-06-18 14:57:53.080 [main] INFO  by.grechanikovars.texthandler.Main -   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+2026-06-18 14:57:53.082 [main] INFO  by.grechanikovars.texthandler.Main -   The point of using Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+2026-06-18 14:57:53.082 [main] INFO  by.grechanikovars.texthandler.Main -   It is a established fact that a reader will be of a page when looking at its layout.
+2026-06-18 14:57:53.085 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceSortServiceImpl - Sentences sorted by letter 'i', count=6
+2026-06-18 14:57:53.085 [main] INFO  by.grechanikovars.texthandler.Main - === Task 2: sentences sorted by letter 'i' ===
+2026-06-18 14:57:53.085 [main] INFO  by.grechanikovars.texthandler.Main -   Bye.
+2026-06-18 14:57:53.085 [main] INFO  by.grechanikovars.texthandler.Main -   It is a established fact that a reader will be of a page when looking at its layout.
+2026-06-18 14:57:53.085 [main] INFO  by.grechanikovars.texthandler.Main -   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+2026-06-18 14:57:53.086 [main] INFO  by.grechanikovars.texthandler.Main -   It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+2026-06-18 14:57:53.086 [main] INFO  by.grechanikovars.texthandler.Main -   The point of using Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+2026-06-18 14:57:53.086 [main] INFO  by.grechanikovars.texthandler.Main -   It was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+2026-06-18 14:57:53.087 [main] INFO  by.grechanikovars.texthandler.service.impl.LexemeSwapServiceImpl - First and last lexeme swapped in every sentence
+2026-06-18 14:57:53.087 [main] INFO  by.grechanikovars.texthandler.Main - === Task 3: text after lexeme swap ===
+unchanged. has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially It Ipsum. was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem It
+
+layout. is a long established fact that a reader will be distracted by the readable content of a page when looking at its It English. point of using Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable The
+
+layout. is a established fact that a reader will be of a page when looking at its It Bye.
+2026-06-18 17:27:29.363 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:27:29.366 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:27:29.386 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 17:27:29.386 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:27:29.388 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:27:29.389 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:27:29.391 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:27:29.392 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:27:29.394 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:27:29.394 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:27:29.397 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 17:27:29.398 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:27:29.399 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 17:27:29.400 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:27:29.406 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:27:29.407 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:27:29.410 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:27:29.410 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:27:29.410 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 2 paragraph(s)
+2026-06-18 17:27:29.414 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:27:29.415 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:27:29.415 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:27:29.415 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 3 paragraph(s)
+2026-06-18 17:27:29.416 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:27:29.417 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:27:29.418 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 17:27:29.418 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:27:29.421 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 17:27:29.421 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:27:29.421 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 2 paragraph(s)
+2026-06-18 17:27:29.422 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:27:29.423 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:27:29.424 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:27:29.424 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:19.004 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:19.006 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:19.008 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Letter count: 2
+2026-06-18 17:31:19.030 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:19.030 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:19.030 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Letter count: 10
+2026-06-18 17:31:19.035 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:19.035 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:19.035 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Letter count: 1
+2026-06-18 17:31:19.038 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:19.038 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:19.038 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Letter count: 2
+2026-06-18 17:31:19.043 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:19.044 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:19.044 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Non-whitespace symbol count: 11
+2026-06-18 17:31:19.046 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:19.047 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:19.047 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Letter count: 10
+2026-06-18 17:31:19.047 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Non-whitespace symbol count: 11
+2026-06-18 17:31:19.050 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:19.051 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:19.051 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Letter count: 2
+2026-06-18 17:31:19.051 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Non-whitespace symbol count: 3
+2026-06-18 17:31:19.054 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:19.055 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:19.055 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Letter count: 2
+2026-06-18 17:31:19.056 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:19.056 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:19.058 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Letter count: 10
+2026-06-18 17:31:19.060 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:19.060 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:19.060 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Non-whitespace symbol count: 3
+2026-06-18 17:31:34.110 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:34.113 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:34.115 [main] INFO  by.grechanikovars.texthandler.service.impl.TextRestoringServiceImpl - Text restored, length=13
+2026-06-18 17:31:34.143 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 17:31:34.143 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:34.143 [main] INFO  by.grechanikovars.texthandler.service.impl.TextRestoringServiceImpl - Text restored, length=14
+2026-06-18 17:31:34.147 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:34.148 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:34.148 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 2 paragraph(s)
+2026-06-18 17:31:34.148 [main] INFO  by.grechanikovars.texthandler.service.impl.TextRestoringServiceImpl - Text restored, length=30
+2026-06-18 17:31:34.153 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:34.155 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:34.155 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 2 paragraph(s)
+2026-06-18 17:31:34.155 [main] INFO  by.grechanikovars.texthandler.service.impl.TextRestoringServiceImpl - Text restored, length=33
+2026-06-18 17:31:34.158 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 17:31:34.159 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:34.159 [main] INFO  by.grechanikovars.texthandler.service.impl.TextRestoringServiceImpl - Text restored, length=21
+2026-06-18 17:31:34.161 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:34.163 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:34.163 [main] INFO  by.grechanikovars.texthandler.service.impl.TextRestoringServiceImpl - Text restored, length=12
+2026-06-18 17:31:34.166 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:31:34.168 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:31:34.168 [main] INFO  by.grechanikovars.texthandler.service.impl.TextRestoringServiceImpl - Text restored, length=12
+2026-06-18 17:32:45.556 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:32:45.561 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:32:45.564 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceWordServiceImpl - Most common word across sentences: 'a' — appears in 3 sentence(s)
+2026-06-18 17:32:45.607 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:32:45.607 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:32:45.607 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceWordServiceImpl - Most common word across sentences: 'apple' — appears in 3 sentence(s)
+2026-06-18 17:32:45.609 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:32:45.611 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:32:45.611 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceWordServiceImpl - Most common word across sentences: 'apple' — appears in 3 sentence(s)
+2026-06-18 17:32:45.616 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:32:45.616 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:32:45.616 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceWordServiceImpl - Most common word across sentences: 'comes' — appears in 3 sentence(s)
+2026-06-18 17:32:45.619 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:32:45.619 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:32:45.619 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceWordServiceImpl - Most common word across sentences: 'apple' — appears in 3 sentence(s)
+2026-06-18 17:36:18.845 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:36:18.847 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:36:18.849 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceSortServiceImpl - Sentences sorted by letter 'e', count=1
+2026-06-18 17:36:18.868 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 17:36:18.868 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:36:18.869 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceSortServiceImpl - Sentences sorted by letter 's', count=2
+2026-06-18 17:36:18.873 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:36:18.873 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:36:18.873 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceSortServiceImpl - Sentences sorted by letter 't', count=3
+2026-06-18 17:36:18.877 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:36:18.877 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:36:18.878 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceSortServiceImpl - Sentences sorted by letter 'a', count=3
+2026-06-18 17:36:18.879 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:36:18.879 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:36:18.881 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceSortServiceImpl - Sentences sorted by letter 'a', count=3
+2026-06-18 17:36:18.882 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:36:18.882 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:36:18.883 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceSortServiceImpl - Sentences sorted by letter 'a', count=3
+2026-06-18 17:36:18.884 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:36:18.884 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:36:18.885 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceSortServiceImpl - Sentences sorted by letter 'a', count=3
+2026-06-18 17:36:18.886 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:36:18.887 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:36:18.887 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceSortServiceImpl - Sentences sorted by letter 'a', count=3
+2026-06-18 17:38:21.838 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:38:21.841 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:38:21.841 [main] INFO  by.grechanikovars.texthandler.service.impl.LexemeSwapServiceImpl - First and last lexeme swapped in every sentence
+2026-06-18 17:38:21.858 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:38:21.858 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:38:21.858 [main] INFO  by.grechanikovars.texthandler.service.impl.LexemeSwapServiceImpl - First and last lexeme swapped in every sentence
+2026-06-18 17:38:21.861 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:38:21.861 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:38:21.862 [main] INFO  by.grechanikovars.texthandler.service.impl.LexemeSwapServiceImpl - First and last lexeme swapped in every sentence
+2026-06-18 17:38:21.864 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:38:21.864 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:38:21.865 [main] INFO  by.grechanikovars.texthandler.service.impl.LexemeSwapServiceImpl - First and last lexeme swapped in every sentence
+2026-06-18 17:38:21.867 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 17:38:21.867 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:38:21.868 [main] INFO  by.grechanikovars.texthandler.service.impl.LexemeSwapServiceImpl - First and last lexeme swapped in every sentence
+2026-06-18 17:38:21.873 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:38:21.873 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 1 sentence(s)
+2026-06-18 17:38:21.873 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 2 paragraph(s)
+2026-06-18 17:38:21.874 [main] INFO  by.grechanikovars.texthandler.service.impl.LexemeSwapServiceImpl - First and last lexeme swapped in every sentence
+2026-06-18 17:47:39.175 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:47:39.179 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:47:39.181 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceWordServiceImpl - Most common word across sentences: 'a' — appears in 3 sentence(s)
+2026-06-18 17:48:41.499 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:48:41.502 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:48:41.504 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceWordServiceImpl - Most common word across sentences: 'cat' — appears in 2 sentence(s)
+2026-06-18 17:48:41.519 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:48:41.519 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:48:41.520 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceWordServiceImpl - Most common word across sentences: 'apple' — appears in 3 sentence(s)
+2026-06-18 17:48:41.523 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:48:41.523 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:48:41.523 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceWordServiceImpl - Most common word across sentences: 'apple' — appears in 3 sentence(s)
+2026-06-18 17:48:41.526 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:48:41.526 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:48:41.526 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceWordServiceImpl - Most common word across sentences: 'comes' — appears in 3 sentence(s)
+2026-06-18 17:48:41.529 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 3 sentence(s)
+2026-06-18 17:48:41.529 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 1 paragraph(s)
+2026-06-18 17:48:41.529 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceWordServiceImpl - Most common word across sentences: 'apple' — appears in 3 sentence(s)
+2026-06-18 18:08:08.739 [main] INFO  by.grechanikovars.texthandler.reader.impl.FileTextReader - File read successfully: data/text.txt, chars=719
+2026-06-18 18:08:08.743 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 18:08:08.744 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 18:08:08.744 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 18:08:08.744 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 3 paragraph(s)
+2026-06-18 18:08:08.745 [main] INFO  by.grechanikovars.texthandler.service.impl.TextRestoringServiceImpl - Text restored, length=714
+2026-06-18 18:08:08.745 [main] INFO  by.grechanikovars.texthandler.Main - === Restored text ===
+It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+
+It is a established fact that a reader will be of a page when looking at its layout. Bye.
+2026-06-18 18:08:08.746 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Letter count: 578
+2026-06-18 18:08:08.747 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Non-whitespace symbol count: 594
+2026-06-18 18:08:08.747 [main] INFO  by.grechanikovars.texthandler.Main - Letters: 578   Non-whitespace symbols: 594
+2026-06-18 18:08:08.748 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceWordServiceImpl - Most common word across sentences: 'it' — appears in 5 sentence(s)
+2026-06-18 18:08:08.748 [main] INFO  by.grechanikovars.texthandler.Main - === Task 1: 5 sentence(s) share the most common word ===
+2026-06-18 18:08:08.749 [main] INFO  by.grechanikovars.texthandler.Main -   It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+2026-06-18 18:08:08.749 [main] INFO  by.grechanikovars.texthandler.Main -   It was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+2026-06-18 18:08:08.749 [main] INFO  by.grechanikovars.texthandler.Main -   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+2026-06-18 18:08:08.749 [main] INFO  by.grechanikovars.texthandler.Main -   The point of using Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+2026-06-18 18:08:08.749 [main] INFO  by.grechanikovars.texthandler.Main -   It is a established fact that a reader will be of a page when looking at its layout.
+2026-06-18 18:08:08.752 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceSortServiceImpl - Sentences sorted by letter 'i', count=6
+2026-06-18 18:08:08.752 [main] INFO  by.grechanikovars.texthandler.Main - === Task 2: sentences sorted by letter 'i' ===
+2026-06-18 18:08:08.753 [main] INFO  by.grechanikovars.texthandler.Main -   Bye.
+2026-06-18 18:08:08.753 [main] INFO  by.grechanikovars.texthandler.Main -   It is a established fact that a reader will be of a page when looking at its layout.
+2026-06-18 18:08:08.753 [main] INFO  by.grechanikovars.texthandler.Main -   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+2026-06-18 18:08:08.753 [main] INFO  by.grechanikovars.texthandler.Main -   It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+2026-06-18 18:08:08.753 [main] INFO  by.grechanikovars.texthandler.Main -   The point of using Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+2026-06-18 18:08:08.753 [main] INFO  by.grechanikovars.texthandler.Main -   It was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+2026-06-18 18:08:08.755 [main] INFO  by.grechanikovars.texthandler.service.impl.LexemeSwapServiceImpl - First and last lexeme swapped in every sentence
+2026-06-18 18:08:08.755 [main] INFO  by.grechanikovars.texthandler.Main - === Task 3: text after lexeme swap ===
+unchanged. has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially It Ipsum. was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem It
+
+layout. is a long established fact that a reader will be distracted by the readable content of a page when looking at its It English. point of using Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable The
+
+layout. is a established fact that a reader will be of a page when looking at its It Bye.
+2026-06-18 18:28:28.330 [main] INFO  by.grechanikovars.texthandler.reader.impl.FileTextReader - File read successfully: data/text.txt, chars=719
+2026-06-18 18:28:28.334 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 18:28:28.335 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 18:28:28.335 [main] INFO  by.grechanikovars.texthandler.parser.impl.SentenceHandler - Paragraph split into 2 sentence(s)
+2026-06-18 18:28:28.335 [main] INFO  by.grechanikovars.texthandler.parser.impl.ParagraphHandler - Text split into 3 paragraph(s)
+2026-06-18 18:28:28.336 [main] INFO  by.grechanikovars.texthandler.service.impl.TextRestoringServiceImpl - Text restored, length=714
+2026-06-18 18:28:28.336 [main] INFO  by.grechanikovars.texthandler.Main - === Restored text ===
+It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+
+It is a established fact that a reader will be of a page when looking at its layout. Bye.
+2026-06-18 18:28:28.338 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Letter count: 578
+2026-06-18 18:28:28.339 [main] INFO  by.grechanikovars.texthandler.service.impl.LetterCountServiceImpl - Non-whitespace symbol count: 594
+2026-06-18 18:28:28.339 [main] INFO  by.grechanikovars.texthandler.Main - Letters: 578   Non-whitespace symbols: 594
+2026-06-18 18:28:28.342 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceWordServiceImpl - Most common word across sentences: 'it' — appears in 5 sentence(s)
+2026-06-18 18:28:28.342 [main] INFO  by.grechanikovars.texthandler.Main - === Task 1: 5 sentence(s) share the most common word ===
+2026-06-18 18:28:28.343 [main] INFO  by.grechanikovars.texthandler.Main -   It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+2026-06-18 18:28:28.343 [main] INFO  by.grechanikovars.texthandler.Main -   It was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+2026-06-18 18:28:28.343 [main] INFO  by.grechanikovars.texthandler.Main -   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+2026-06-18 18:28:28.343 [main] INFO  by.grechanikovars.texthandler.Main -   The point of using Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+2026-06-18 18:28:28.344 [main] INFO  by.grechanikovars.texthandler.Main -   It is a established fact that a reader will be of a page when looking at its layout.
+2026-06-18 18:28:28.349 [main] INFO  by.grechanikovars.texthandler.service.impl.SentenceSortServiceImpl - Sentences sorted by letter 'i', count=6
+2026-06-18 18:28:28.349 [main] INFO  by.grechanikovars.texthandler.Main - === Task 2: sentences sorted by letter 'i' ===
+2026-06-18 18:28:28.349 [main] INFO  by.grechanikovars.texthandler.Main -   Bye.
+2026-06-18 18:28:28.349 [main] INFO  by.grechanikovars.texthandler.Main -   It is a established fact that a reader will be of a page when looking at its layout.
+2026-06-18 18:28:28.349 [main] INFO  by.grechanikovars.texthandler.Main -   It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+2026-06-18 18:28:28.350 [main] INFO  by.grechanikovars.texthandler.Main -   It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+2026-06-18 18:28:28.350 [main] INFO  by.grechanikovars.texthandler.Main -   The point of using Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+2026-06-18 18:28:28.350 [main] INFO  by.grechanikovars.texthandler.Main -   It was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+2026-06-18 18:28:28.351 [main] INFO  by.grechanikovars.texthandler.service.impl.LexemeSwapServiceImpl - First and last lexeme swapped in every sentence
+2026-06-18 18:28:28.351 [main] INFO  by.grechanikovars.texthandler.Main - === Task 3: text after lexeme swap ===
+unchanged. has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially It Ipsum. was popularised in the with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem It
+
+layout. is a long established fact that a reader will be distracted by the readable content of a page when looking at its It English. point of using Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable The
+
+layout. is a established fact that a reader will be of a page when looking at its It Bye.
