@@ -43,68 +43,12 @@ class LetterCountServiceImplTest {
     lexemeHandler.setNext(characterHandler);
   }
 
-  @Test
-  void testCountLettersShortText() throws TextHandlerException {
-    // given
-    TextComponent parsed = paragraphHandler.handle(SHORT_TEXT);
-    // when
-    int actual = service.countLetters(parsed);
-    // then
-    assertEquals(EXPECTED_LETTERS, actual);
-  }
-
-  @Test
-  void testCountSymbolsShortText() throws TextHandlerException {
-    // given
-    TextComponent parsed = paragraphHandler.handle(SHORT_TEXT);
-    // when
-    int actual = service.countSymbols(parsed);
-    // then
-    assertEquals(EXPECTED_SYMBOLS, actual);
-  }
-
-  @Test
-  void testCountLettersHelloWorld() throws TextHandlerException {
-    // given
-    TextComponent parsed = paragraphHandler.handle(TEXT_HELLO);
-    // when
-    int actual = service.countLetters(parsed);
-    // then
-    assertEquals(HELLO_LETTERS, actual);
-  }
-
-  @Test
-  void testCountSymbolsHelloWorld() throws TextHandlerException {
-    // given
-    TextComponent parsed = paragraphHandler.handle(TEXT_HELLO);
-    // when
-    int actual = service.countSymbols(parsed);
-    // then
-    assertEquals(HELLO_SYMBOLS, actual);
-  }
-
-  @Test
-  void testLetterCountLessThanOrEqualToSymbolCount() throws TextHandlerException {
-    // given
-    TextComponent parsed = paragraphHandler.handle(TEXT_HELLO);
-    // when
-    int letters = service.countLetters(parsed);
-    int symbols = service.countSymbols(parsed);
-    // then
-    assertTrue(letters <= symbols);
-  }
-
-  @Test
-  void testBothCountsArePositive() throws TextHandlerException {
-    // given
-    TextComponent parsed = paragraphHandler.handle(SHORT_TEXT);
-    // when
-    int letters = service.countLetters(parsed);
-    int symbols = service.countSymbols(parsed);
-    // then
-    assertAll(
-            () -> assertTrue(letters > 0),
-            () -> assertTrue(symbols > 0)
+  static Stream<Arguments> provideTextsAndExpectedLetters() {
+    return Stream.of(
+            Arguments.of("Hi.",           2),
+            Arguments.of("Hello world.", 10),
+            Arguments.of("A.",            1),
+            Arguments.of("No.",           2)
     );
   }
 
@@ -119,12 +63,62 @@ class LetterCountServiceImplTest {
     assertEquals(expected, actual);
   }
 
-  static Stream<Arguments> provideTextsAndExpectedLetters() {
-    return Stream.of(
-            Arguments.of("Hi.",           2),
-            Arguments.of("Hello world.", 10),
-            Arguments.of("A.",            1),
-            Arguments.of("No.",           2)
+  @Test
+  void testCountLettersShortText() throws TextHandlerException {
+    TextComponent parsed = paragraphHandler.handle(SHORT_TEXT);
+
+    int actual = service.countLetters(parsed);
+
+    assertEquals(EXPECTED_LETTERS, actual);
+  }
+
+  @Test
+  void testCountSymbolsShortText() throws TextHandlerException {
+    TextComponent parsed = paragraphHandler.handle(SHORT_TEXT);
+
+    int actual = service.countSymbols(parsed);
+
+    assertEquals(EXPECTED_SYMBOLS, actual);
+  }
+
+  @Test
+  void testCountLettersHelloWorld() throws TextHandlerException {
+    TextComponent parsed = paragraphHandler.handle(TEXT_HELLO);
+
+    int actual = service.countLetters(parsed);
+
+    assertEquals(HELLO_LETTERS, actual);
+  }
+
+  @Test
+  void testCountSymbolsHelloWorld() throws TextHandlerException {
+    TextComponent parsed = paragraphHandler.handle(TEXT_HELLO);
+
+    int actual = service.countSymbols(parsed);
+
+    assertEquals(HELLO_SYMBOLS, actual);
+  }
+
+  @Test
+  void testLetterCountLessThanOrEqualToSymbolCount() throws TextHandlerException {
+    TextComponent parsed = paragraphHandler.handle(TEXT_HELLO);
+
+    int letters = service.countLetters(parsed);
+    int symbols = service.countSymbols(parsed);
+
+    assertTrue(letters <= symbols);
+  }
+
+  @Test
+  void testBothCountsArePositive() throws TextHandlerException {
+    TextComponent parsed = paragraphHandler.handle(SHORT_TEXT);
+
+    int letters = service.countLetters(parsed);
+    int symbols = service.countSymbols(parsed);
+
+    assertAll(
+            () -> assertTrue(letters > 0),
+            () -> assertTrue(symbols > 0)
     );
   }
 }

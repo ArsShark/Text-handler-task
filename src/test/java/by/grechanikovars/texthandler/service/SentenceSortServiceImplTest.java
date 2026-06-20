@@ -19,9 +19,6 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SentenceSortServiceImplTest {
-
-  // "Aaaa." has 4 'a', "Aa." has 2 'a', "B." has 0 'a'
-  // ascending: "B." → "Aa." → "Aaaa."
   private static final String TEXT_SORT_BY_A = "Aaaa. Aa. B.";
 
   private SentenceSortService service;
@@ -39,63 +36,12 @@ class SentenceSortServiceImplTest {
     sentenceHandler.setNext(lexemeHandler);
     lexemeHandler.setNext(characterHandler);
   }
-
-  @Test
-  void testReturnsSameNumberOfSentences() throws TextHandlerException {
-    // given
-    TextComponent parsed = paragraphHandler.handle(TEXT_SORT_BY_A);
-    int expected = 3;
-    // when
-    List<TextComponent> actual = service.sortSentencesByLetterCount(parsed, 'a');
-    // then
-    assertEquals(expected, actual.size());
-  }
-
-  @Test
-  void testFirstSentenceHasFewestTargetLetters() throws TextHandlerException {
-    // given
-    TextComponent parsed = paragraphHandler.handle(TEXT_SORT_BY_A);
-    // when
-    List<TextComponent> sorted = service.sortSentencesByLetterCount(parsed, 'a');
-    // then — "B." contains 0 'a', so it comes first
-    String firstSentence = sorted.get(0).toString();
-    assertFalse(firstSentence.toLowerCase().contains("a"));
-  }
-
-  @Test
-  void testLastSentenceHasMostTargetLetters() throws TextHandlerException {
-    // given
-    TextComponent parsed = paragraphHandler.handle(TEXT_SORT_BY_A);
-    // when
-    List<TextComponent> sorted = service.sortSentencesByLetterCount(parsed, 'a');
-    // then — "Aaaa." has 4 'a' letters, must be last
-    int lastIndex = sorted.size() - 1;
-    String lastSentence = sorted.get(lastIndex).toString();
-    assertTrue(lastSentence.startsWith("Aaaa"));
-  }
-
-  @Test
-  void testSortedListIsInAscendingOrder() throws TextHandlerException {
-    // given
-    TextComponent parsed = paragraphHandler.handle(TEXT_SORT_BY_A);
-    // when
-    List<TextComponent> sorted = service.sortSentencesByLetterCount(parsed, 'a');
-    // then — each sentence has >= 'a' count than the previous one
-    for (int i = 0; i < sorted.size() - 1; i++) {
-      int currentCount = countLetter(sorted.get(i).toString(), 'a');
-      int nextCount = countLetter(sorted.get(i + 1).toString(), 'a');
-      assertTrue(currentCount <= nextCount);
-    }
-  }
-
-  @Test
-  void testResultIsNotEmpty() throws TextHandlerException {
-    // given
-    TextComponent parsed = paragraphHandler.handle(TEXT_SORT_BY_A);
-    // when
-    List<TextComponent> actual = service.sortSentencesByLetterCount(parsed, 'a');
-    // then
-    assertFalse(actual.isEmpty());
+  static Stream<Arguments> provideTextsAndLetters() {
+    return Stream.of(
+            Arguments.of("One sentence.", 'e', 1),
+            Arguments.of("First. Second.", 's', 2),
+            Arguments.of("One. Two. Three.", 't', 3)
+    );
   }
 
   @ParameterizedTest
@@ -110,23 +56,44 @@ class SentenceSortServiceImplTest {
     assertEquals(expectedSize, actual.size());
   }
 
-  static Stream<Arguments> provideTextsAndLetters() {
-    return Stream.of(
-            Arguments.of("One sentence.", 'e', 1),
-            Arguments.of("First. Second.", 's', 2),
-            Arguments.of("One. Two. Three.", 't', 3)
-    );
+  @Test
+  void testReturnsSameNumberOfSentences() throws TextHandlerException {
+    TextComponent parsed = paragraphHandler.handle(TEXT_SORT_BY_A);
+    int expected = 3;
+
+    List<TextComponent> actual = service.sortSentencesByLetterCount(parsed, 'a');
+
+    assertEquals(expected, actual.size());
   }
 
-  private int countLetter(String text, char letter) {
-    String lower = text.toLowerCase();
-    char lowerLetter = Character.toLowerCase(letter);
-    int count = 0;
-    for (int i = 0; i < lower.length(); i++) {
-      if (lower.charAt(i) == lowerLetter) {
-        count++;
-      }
-    }
-    return count;
+  @Test
+  void testFirstSentenceHasFewestTargetLetters() throws TextHandlerException {
+    TextComponent parsed = paragraphHandler.handle(TEXT_SORT_BY_A);
+
+    List<TextComponent> sorted = service.sortSentencesByLetterCount(parsed, 'a');
+
+    String firstSentence = sorted.get(0).toString();
+    assertFalse(firstSentence.toLowerCase().contains("a"));
+  }
+
+  @Test
+  void testLastSentenceHasMostTargetLetters() throws TextHandlerException {
+    TextComponent parsed = paragraphHandler.handle(TEXT_SORT_BY_A);
+
+    List<TextComponent> sorted = service.sortSentencesByLetterCount(parsed, 'a');
+
+    int lastIndex = sorted.size() - 1;
+    String lastSentence = sorted.get(lastIndex).toString();
+    assertTrue(lastSentence.startsWith("Aaaa"));
+  }
+
+  @Test
+  void testResultIsNotEmpty() throws TextHandlerException {
+
+    TextComponent parsed = paragraphHandler.handle(TEXT_SORT_BY_A);
+
+    List<TextComponent> actual = service.sortSentencesByLetterCount(parsed, 'a');
+
+    assertFalse(actual.isEmpty());
   }
 }

@@ -7,9 +7,8 @@ public abstract class TextHandler {
 
   protected TextHandler next;
 
-  public TextHandler setNext(TextHandler next) {
+  public void setNext(TextHandler next) {
     this.next = next;
-    return next;
   }
 
   public abstract TextComponent handle(String text) throws TextHandlerException;

@@ -38,41 +38,73 @@ class TextHandlerChainTest {
     lexemeHandler.setNext(characterHandler);
   }
 
-  @Test
-  void testRootNodeTypeIsText() throws TextHandlerException {
+  static Stream<Arguments> provideTextsAndExpectedParagraphCount() {
+    return Stream.of(
+            Arguments.of("Hello world.", 1),
+            Arguments.of("First paragraph.\n\nSecond paragraph.", 2),
+            Arguments.of("One.\n\nTwo.\n\nThree.", 3)
+    );
+  }
+
+  static Stream<Arguments> provideTextsAndExpectedSentenceCount() {
+    return Stream.of(
+            Arguments.of("One sentence.", 1),
+            Arguments.of("First. Second.", 2),
+            Arguments.of("One. Two. Three.", 3)
+    );
+  }
+
+  @ParameterizedTest
+  @MethodSource("provideTextsAndExpectedParagraphCount")
+  void testParagraphCountParametrized(String text, int expectedParagraphs)
+          throws TextHandlerException {
     // given
     // when
-    TextComponent actual = paragraphHandler.handle(SINGLE_SENTENCE);
+    TextComponent root = paragraphHandler.handle(text);
     // then
+    int actual = root.getChildren().size();
+    assertEquals(expectedParagraphs, actual);
+  }
+
+  @ParameterizedTest
+  @MethodSource("provideTextsAndExpectedSentenceCount")
+  void testSentenceCountInFirstParagraphParametrized(String text, int expectedSentences)
+          throws TextHandlerException {
+    TextComponent root = paragraphHandler.handle(text);
+
+    TextComponent paragraph = root.getChildren().get(0);
+    int actual = paragraph.getChildren().size();
+    assertEquals(expectedSentences, actual);
+  }
+
+  @Test
+  void testRootNodeTypeIsText() throws TextHandlerException {
+    TextComponent actual = paragraphHandler.handle(SINGLE_SENTENCE);
+
     assertEquals(TextComponentType.TEXT, actual.getType());
   }
 
   @Test
   void testTwoParagraphsProducesTwoChildren() throws TextHandlerException {
-    // given
     int expected = 2;
-    // when
+
     TextComponent actual = paragraphHandler.handle(TWO_PARAGRAPH_TEXT);
-    // then
+
     assertEquals(expected, actual.getChildren().size());
   }
 
   @Test
   void testFirstChildIsParagraph() throws TextHandlerException {
-    // given
-    // when
     TextComponent root = paragraphHandler.handle(SINGLE_SENTENCE);
-    // then
+
     TextComponent firstChild = root.getChildren().get(0);
     assertEquals(TextComponentType.PARAGRAPH, firstChild.getType());
   }
 
   @Test
   void testSentenceChildrenAreSentenceType() throws TextHandlerException {
-    // given
-    // when
     TextComponent root = paragraphHandler.handle(TWO_SENTENCES);
-    // then
+
     TextComponent paragraph = root.getChildren().get(0);
     TextComponent sentence = paragraph.getChildren().get(0);
     assertEquals(TextComponentType.SENTENCE, sentence.getType());
@@ -80,11 +112,10 @@ class TextHandlerChainTest {
 
   @Test
   void testTwoSentencesInOneParagraph() throws TextHandlerException {
-    // given
     int expected = 2;
-    // when
+
     TextComponent root = paragraphHandler.handle(TWO_SENTENCES);
-    // then
+
     TextComponent paragraph = root.getChildren().get(0);
     int actual = paragraph.getChildren().size();
     assertEquals(expected, actual);
@@ -92,10 +123,8 @@ class TextHandlerChainTest {
 
   @Test
   void testLexemeChildrenAreLexemeType() throws TextHandlerException {
-    // given
-    // when
     TextComponent root = paragraphHandler.handle(SINGLE_SENTENCE);
-    // then
+
     TextComponent paragraph = root.getChildren().get(0);
     TextComponent sentence = paragraph.getChildren().get(0);
     TextComponent lexeme = sentence.getChildren().get(0);
@@ -104,10 +133,8 @@ class TextHandlerChainTest {
 
   @Test
   void testLeafNodesAreCharacterType() throws TextHandlerException {
-    // given
-    // when
     TextComponent root = paragraphHandler.handle(SINGLE_SENTENCE);
-    // then
+
     TextComponent paragraph = root.getChildren().get(0);
     TextComponent sentence = paragraph.getChildren().get(0);
     TextComponent lexeme = sentence.getChildren().get(0);
@@ -117,66 +144,22 @@ class TextHandlerChainTest {
 
   @Test
   void testRestoredTextMatchesInput() throws TextHandlerException {
-    // given
     String text = TWO_SENTENCES;
-    // when
+
     TextComponent root = paragraphHandler.handle(text);
-    // then
+
     String actual = root.toString();
     assertEquals(text, actual);
   }
 
   @Test
   void testLeafContentMatchesFirstCharOfFirstLexeme() throws TextHandlerException {
-    // given
-    // when
     TextComponent root = paragraphHandler.handle(SINGLE_SENTENCE);
-    // then
+
     TextComponent paragraph = root.getChildren().get(0);
     TextComponent sentence = paragraph.getChildren().get(0);
     TextComponent firstLexeme = sentence.getChildren().get(0);
     TextComponent firstLeaf = firstLexeme.getChildren().get(0);
     assertEquals('H', firstLeaf.getContent());
-  }
-
-  @ParameterizedTest
-  @MethodSource("provideTextsAndExpectedParagraphCount")
-  void testParagraphCountParametrized(String text, int expectedParagraphs)
-          throws TextHandlerException {
-    // given — text provided by method source
-    // when
-    TextComponent root = paragraphHandler.handle(text);
-    // then
-    int actual = root.getChildren().size();
-    assertEquals(expectedParagraphs, actual);
-  }
-
-  static Stream<Arguments> provideTextsAndExpectedParagraphCount() {
-    return Stream.of(
-            Arguments.of("Hello world.", 1),
-            Arguments.of("First paragraph.\n\nSecond paragraph.", 2),
-            Arguments.of("One.\n\nTwo.\n\nThree.", 3)
-    );
-  }
-
-  @ParameterizedTest
-  @MethodSource("provideTextsAndExpectedSentenceCount")
-  void testSentenceCountInFirstParagraphParametrized(String text, int expectedSentences)
-          throws TextHandlerException {
-    // given — text provided by method source
-    // when
-    TextComponent root = paragraphHandler.handle(text);
-    // then
-    TextComponent paragraph = root.getChildren().get(0);
-    int actual = paragraph.getChildren().size();
-    assertEquals(expectedSentences, actual);
-  }
-
-  static Stream<Arguments> provideTextsAndExpectedSentenceCount() {
-    return Stream.of(
-            Arguments.of("One sentence.", 1),
-            Arguments.of("First. Second.", 2),
-            Arguments.of("One. Two. Three.", 3)
-    );
   }
 }

@@ -13,12 +13,10 @@ public abstract class TextComponent {
   }
 
   public List<TextComponent> getChildren() {
-    throw new UnsupportedOperationException("Leaf node has no children");
+    return List.of();
   }
 
-  public char getContent() {
-    throw new UnsupportedOperationException("Composite node has no single character content");
-  }
+  public char getContent() { return '\0';}
 
   @Override
   public abstract String toString();

@@ -22,7 +22,6 @@ public class SentenceWordServiceImpl implements SentenceWordService {
   @Override
   public List<TextComponent> findSentencesWithMostCommonWord(TextComponent text) {
     List<TextComponent> allSentences = collectSentences(text);
-
     Map<String, List<TextComponent>> wordToSentences = buildWordIndex(allSentences);
 
     List<TextComponent> maxSentences = new ArrayList<>();
@@ -34,9 +33,7 @@ public class SentenceWordServiceImpl implements SentenceWordService {
         maxWord = entry.getKey();
       }
     }
-
-    logger.info("Most common word across sentences: '{}' — appears in {} sentence(s)",
-            maxWord, maxSentences.size());
+    logger.info("Most common word: '{}' in {} sentence(s)", maxWord, maxSentences.size());
     return maxSentences;
   }
 
@@ -55,7 +52,8 @@ public class SentenceWordServiceImpl implements SentenceWordService {
     for (TextComponent sentence : sentences) {
       Set<String> wordsInSentence = extractWords(sentence);
       for (String word : wordsInSentence) {
-        List<TextComponent> sentenceList = wordToSentences.computeIfAbsent(word, k -> new ArrayList<>());
+        List<TextComponent> sentenceList =
+                wordToSentences.computeIfAbsent(word, k -> new ArrayList<>());
         sentenceList.add(sentence);
       }
     }
@@ -69,7 +67,8 @@ public class SentenceWordServiceImpl implements SentenceWordService {
       String lexemeText = lexeme.toString();
       Matcher matcher = WORD_PATTERN.matcher(lexemeText);
       while (matcher.find()) {
-        String word = matcher.group().toLowerCase();
+        String matched = matcher.group();
+        String word = matched.toLowerCase();
         words.add(word);
       }
     }

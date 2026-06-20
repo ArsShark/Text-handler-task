@@ -20,7 +20,7 @@ public class SentenceSortServiceImpl implements SentenceSortService {
     Comparator<TextComponent> byLetterCount =
             Comparator.comparingInt(s -> countLetter(s, lowerLetter));
     allSentences.sort(byLetterCount);
-    logger.info("Sentences sorted by letter '{}', count={}", letter, allSentences.size());
+    logger.info("Sentences sorted by letter '{}', total={}", letter, allSentences.size());
     return allSentences;
   }
 

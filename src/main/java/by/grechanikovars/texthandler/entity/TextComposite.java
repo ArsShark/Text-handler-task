@@ -51,7 +51,8 @@ public class TextComposite extends TextComponent {
   private String resolveDelimiter() {
     return switch (type) {
       case TEXT -> "\n\n";
-      case PARAGRAPH, SENTENCE -> " ";
+      case PARAGRAPH -> "\t";
+      case SENTENCE -> " ";
       default -> "";
     };
   }

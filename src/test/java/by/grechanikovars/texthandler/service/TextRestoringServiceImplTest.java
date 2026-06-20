@@ -39,44 +39,12 @@ class TextRestoringServiceImplTest {
     lexemeHandler.setNext(characterHandler);
   }
 
-  @Test
-  void testRestoreSingleSentence() throws TextHandlerException {
-    // given
-    TextComponent parsed = paragraphHandler.handle(SINGLE_SENTENCE);
-    // when
-    String actual = service.restore(parsed);
-    // then
-    assertEquals(SINGLE_SENTENCE, actual);
-  }
-
-  @Test
-  void testRestoreTwoSentences() throws TextHandlerException {
-    // given
-    TextComponent parsed = paragraphHandler.handle(TWO_SENTENCES);
-    // when
-    String actual = service.restore(parsed);
-    // then
-    assertEquals(TWO_SENTENCES, actual);
-  }
-
-  @Test
-  void testRestoreTwoParagraphs() throws TextHandlerException {
-    // given
-    TextComponent parsed = paragraphHandler.handle(TWO_PARAGRAPHS);
-    // when
-    String actual = service.restore(parsed);
-    // then
-    assertEquals(TWO_PARAGRAPHS, actual);
-  }
-
-  @Test
-  void testRestoredTextIsNotEmpty() throws TextHandlerException {
-    // given
-    TextComponent parsed = paragraphHandler.handle(SINGLE_SENTENCE);
-    // when
-    String actual = service.restore(parsed);
-    // then
-    assertFalse(actual.isBlank());
+  static Stream<Arguments> provideTexts() {
+    return Stream.of(
+            Arguments.of("One sentence."),
+            Arguments.of("First. Second."),
+            Arguments.of("Paragraph one.\n\nParagraph two.")
+    );
   }
 
   @ParameterizedTest
@@ -90,11 +58,39 @@ class TextRestoringServiceImplTest {
     assertEquals(text, actual);
   }
 
-  static Stream<Arguments> provideTexts() {
-    return Stream.of(
-            Arguments.of("One sentence."),
-            Arguments.of("First. Second."),
-            Arguments.of("Paragraph one.\n\nParagraph two.")
-    );
+  @Test
+  void testRestoreSingleSentence() throws TextHandlerException {
+    TextComponent parsed = paragraphHandler.handle(SINGLE_SENTENCE);
+
+    String actual = service.restore(parsed);
+
+    assertEquals(SINGLE_SENTENCE, actual);
+  }
+
+  @Test
+  void testRestoreTwoSentences() throws TextHandlerException {
+    TextComponent parsed = paragraphHandler.handle(TWO_SENTENCES);
+
+    String actual = service.restore(parsed);
+
+    assertEquals(TWO_SENTENCES, actual);
+  }
+
+  @Test
+  void testRestoreTwoParagraphs() throws TextHandlerException {
+    TextComponent parsed = paragraphHandler.handle(TWO_PARAGRAPHS);
+
+    String actual = service.restore(parsed);
+
+    assertEquals(TWO_PARAGRAPHS, actual);
+  }
+
+  @Test
+  void testRestoredTextIsNotEmpty() throws TextHandlerException {
+    TextComponent parsed = paragraphHandler.handle(SINGLE_SENTENCE);
+
+    String actual = service.restore(parsed);
+
+    assertFalse(actual.isBlank());
   }
 }

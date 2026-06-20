@@ -15,16 +15,12 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SentenceWordServiceImplTest {
-
-  // "apple" appears in all 3 sentences — maximum
   private static final String TEXT_THREE_SENTENCES =
           "I like apple. She eats apple. He bought apple.";
 
-  // "cat" is in 2 sentences, "dog" in 1 — expected max = 2
   private static final String TEXT_TWO_VS_ONE =
           "I have cat. She has cat. He has dog.";
 
-  // All sentences have unique words
   private static final String TEXT_NO_COMMON =
           "Alpha comes first. Beta comes second. Gamma comes third.";
 
@@ -57,32 +53,29 @@ class SentenceWordServiceImplTest {
 
   @Test
   void testMaxCommonWordCountIsTwoWhenTwoVsOne() throws TextHandlerException {
-    // given
     TextComponent parsed = paragraphHandler.handle(TEXT_TWO_VS_ONE);
     int expected = 2;
-    // when
+
     List<TextComponent> actual = service.findSentencesWithMostCommonWord(parsed);
-    // then
+
     assertEquals(expected, actual.size());
   }
 
   @Test
   void testResultIsNotEmpty() throws TextHandlerException {
-    // given
     TextComponent parsed = paragraphHandler.handle(TEXT_THREE_SENTENCES);
-    // when
+
     List<TextComponent> actual = service.findSentencesWithMostCommonWord(parsed);
-    // then
+
     assertFalse(actual.isEmpty());
   }
 
   @Test
   void testAllResultNodesAreSentenceType() throws TextHandlerException {
-    // given
     TextComponent parsed = paragraphHandler.handle(TEXT_THREE_SENTENCES);
-    // when
+
     List<TextComponent> actual = service.findSentencesWithMostCommonWord(parsed);
-    // then
+
     for (TextComponent sentence : actual) {
       assertEquals(
               by.grechanikovars.texthandler.entity.TextComponentType.SENTENCE,
@@ -93,12 +86,10 @@ class SentenceWordServiceImplTest {
 
   @Test
   void testCommonWordInSingleSentenceReturnsOne() throws TextHandlerException {
-    // given — "comes" is in all 3, but "alpha","beta","gamma" are unique
-    // "comes" appears in all 3 sentences
     TextComponent parsed = paragraphHandler.handle(TEXT_NO_COMMON);
-    // when
+
     List<TextComponent> actual = service.findSentencesWithMostCommonWord(parsed);
-    // then — "comes" appears in all 3 sentences
+
     assertEquals(3, actual.size());
   }
 }
